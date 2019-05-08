@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>579</width>
+    <height>389</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>ImgurUploader</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>imgur.ico</normaloff>imgur.ico</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background: rgb(68, 69, 73);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QWidget" name="widget" native="true">
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <layout class="QGridLayout" name="gridLayout">
+         <item row="2" column="1">
+          <widget class="QComboBox" name="modeComboBox">
+           <property name="minimumSize">
+            <size>
+             <width>270</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">border: 2px solid grey;
+font-size:20px;
+font-weight:700;
+font: 63 12pt &quot;Bahnschrift SemiBold SemiConden&quot;;
+background:#565454;
+color:#fff;</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0" alignment="Qt::AlignLeft">
+          <widget class="QLabel" name="modelLabel">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">border:none;
+font-size:20px;
+font-weight:700;
+font: 63 12pt &quot;Bahnschrift SemiBold SemiConden&quot;;
+color:white;</string>
+           </property>
+           <property name="text">
+            <string>PLEASE SELECT THE UPLOAD MODE</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="titleLabel">
+           <property name="styleSheet">
+            <string notr="true">border:none;
+image: url(:/imgur.ico);
+image-position: left;
+font-size:20px;
+font-weight:700;
+font: 63 12pt &quot;Bahnschrift SemiBold SemiConden&quot;;
+color:white;</string>
+           </property>
+           <property name="text">
+            <string>        ImgurUploader</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1" alignment="Qt::AlignLeft">
+          <widget class="QLabel" name="statusLabel">
+           <property name="styleSheet">
+            <string notr="true">border:none;
+color: rgb(170, 85, 127);
+font-size:20px;
+font-weight:700;
+font: 63 12pt &quot;Bahnschrift SemiBold SemiConden&quot;;</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QGridLayout" name="gridLayout_2">
+         <item row="2" column="3">
+          <widget class="QPushButton" name="copyButton">
+           <property name="minimumSize">
+            <size>
+             <width>150</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>93</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(255, 85, 127);
+font-size:20px;
+font-weight:700;
+font: 63 12pt &quot;Bahnschrift SemiBold SemiConden&quot;;</string>
+           </property>
+           <property name="text">
+            <string>COPY URL</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="urlLineEdit">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">border: 2px solid grey;
+font-size:20px;
+font-weight:700;
+font: 63 12pt &quot;Bahnschrift SemiBold SemiConden&quot;;
+background:#565454;
+color:#fff;</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLineEdit" name="urlResponseLineEdit">
+           <property name="styleSheet">
+            <string notr="true">border: 2px solid grey;
+font-size:20px;
+font-weight:700;
+font: 63 12pt &quot;Bahnschrift SemiBold SemiConden&quot;;
+background:#565454;
+color:#fff;</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="3">
+          <widget class="QPushButton" name="uploadButton">
+           <property name="minimumSize">
+            <size>
+             <width>150</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>93</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(85, 170, 255);
+font-size:20px;
+font-weight:700;
+font: 63 12pt &quot;Bahnschrift SemiBold SemiConden&quot;;</string>
+           </property>
+           <property name="text">
+            <string>UPLOAD</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="3">
+          <widget class="QToolButton" name="selectToolButton">
+           <property name="minimumSize">
+            <size>
+             <width>150</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="cursor">
+            <cursorShape>ForbiddenCursor</cursorShape>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(85, 170, 127);
+font-size:20px;
+font-weight:700;
+font: 63 12pt &quot;Bahnschrift SemiBold SemiConden&quot;;</string>
+           </property>
+           <property name="text">
+            <string>SELECT FILE</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QPushButton" name="clearButton">
+           <property name="minimumSize">
+            <size>
+             <width>93</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(255, 170, 127);
+font-size:20px;
+font-weight:700;
+font: 63 12pt &quot;Bahnschrift SemiBold SemiConden&quot;;</string>
+           </property>
+           <property name="text">
+            <string>CLEAR</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="3" alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="ImageLabel">
+           <property name="minimumSize">
+            <size>
+             <width>30</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QLineEdit" name="dropLineEdit">
+           <property name="minimumSize">
+            <size>
+             <width>385</width>
+             <height>200</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>150</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font-size:20px;
+font-weight:700;
+font: 63 12pt &quot;Bahnschrift SemiBold SemiConden&quot;;
+color:white;</string>
+           </property>
+           <property name="text">
+            <string>DROP YOUR IMAGE HERE</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="dragEnabled">
+            <bool>true</bool>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>

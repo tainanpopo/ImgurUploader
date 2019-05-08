@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="/">
+    <file>imgur.ico</file>
+  </qresource>
+</RCC>
