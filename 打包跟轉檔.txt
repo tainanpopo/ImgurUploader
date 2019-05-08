@@ -1,4 +1,0 @@
-pyuic5 imgur.ui -o imgur.py
-pyinstaller ImgurUploader.py -F --noconsole --icon=E:\\python\\imgurApi\\imgur.ico --version-file=E:\\python\\imgurApi\\file_version_info.txt
-圖示要先用成qrc格式再轉換成py檔案
-resource cmd: pyrcc5 -o resource.py resource.qrc
