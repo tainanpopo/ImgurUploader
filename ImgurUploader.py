@@ -10,28 +10,8 @@ import os
 import sys
 import re
 import resource
-from PIL import Image
-
-class DropLineEdit(QLineEdit): 
-    def __init__(self, ImageLabel): 
-        super(QLineEdit,self).__init__()
-        self.setAcceptDrops(True)
-        self.ImageLabel = ImageLabel 
-    
-    def dragEnterEvent(self,event): 
-        event.accept() 
-        
-    def dropEvent(self, event): # 獲取拖曳過來的檔案路徑
-        st = str(event.mimeData().urls())
-        st = st.replace("[PyQt5.QtCore.QUrl('file:", "")
-        st = st.replace("///", "")
-        st = st.replace("')]","") 
-        print(st)
-        self.setText(st)
-        pixmap = QPixmap(st)
-        smaller_pixmap = pixmap.scaled(354, 200, Qt.KeepAspectRatio, Qt.FastTransformation)
-        self.ImageLabel.setPixmap(smaller_pixmap)
-        print("Drop end")
+from PIL import ImageGrab
+im = ImageGrab.grabclipboard()
 
 class QTitleButton(QPushButton):  # 新建標題欄按鈕類別
 
@@ -102,10 +82,28 @@ class MyForm(QMainWindow, Ui_MainWindow):
         self.m_flag = None
         self.checker = True
         self.drop = False
+        self.paste = False
         self.titleLabel.setFixedHeight(20)  # 設定標題欄高度
         self.setBackGroundStyle()
         self.dropLineEdit.setAcceptDrops(True)
         self.dropLineEdit.installEventFilter(self)
+        QApplication.clipboard().dataChanged.connect(self.clipboardChanged)
+
+    # Get the system clipboard contents
+    def clipboardChanged(self):
+        text = QApplication.clipboard().text()
+        text = text.replace("file:", "")
+        text = text.replace("///", "")
+        print(text)
+
+        pixmap = QPixmap(text)
+        if pixmap.isNull() == False:
+            smaller_pixmap = pixmap.scaled(354, 200, Qt.KeepAspectRatio, Qt.FastTransformation)
+            self.urlLineEdit.setText(text)
+            self.ImageLabel.setPixmap(smaller_pixmap)
+            self.paste = True
+        else:
+            pass
 
     def eventFilter(self, object, event): # DropLineEdit
         if (object is self.dropLineEdit):
@@ -262,6 +260,12 @@ class MyForm(QMainWindow, Ui_MainWindow):
                 self.urlResponseLineEdit.setText('')
                 return
         elif self.drop == True and self.checker == True:
+            buttonReply = QMessageBox.question(
+                self, 'Warning', 'Please check your mode!', QMessageBox.Ok)
+            if buttonReply == QMessageBox.Ok:
+                self.urlResponseLineEdit.setText('')
+                return
+        elif self.paste == True and self.checker == True:
             buttonReply = QMessageBox.question(
                 self, 'Warning', 'Please check your mode!', QMessageBox.Ok)
             if buttonReply == QMessageBox.Ok:
