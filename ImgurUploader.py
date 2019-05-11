@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from imgurpython import ImgurClient
 from imgurpython.helpers.error import ImgurClientError
 from config import client_id, client_secret, album_id, access_token, refresh_token
@@ -9,7 +10,7 @@ from PyQt5.QtGui import QFont, QCursor, QIcon, QPixmap
 import os
 import sys
 import re
-import resource
+import resource_rc
 from PIL import ImageGrab
 im = ImageGrab.grabclipboard()
 

@@ -163,3 +163,5 @@ class Ui_MainWindow(object):
         self.selectToolButton.setText(_translate("MainWindow", "SELECT FILE"))
         self.clearButton.setText(_translate("MainWindow", "CLEAR"))
         self.dropLineEdit.setText(_translate("MainWindow", "DROP YOUR IMAGE HERE"))
+
+import resource_rc
